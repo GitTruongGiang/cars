@@ -20,7 +20,6 @@ const createProduct = async () => {
       price: Number(e.MSRP),
     };
   });
-  console.log(newData);
   newData.forEach((e) => {
     Car.create(e);
   });

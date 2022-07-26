@@ -36,7 +36,8 @@ carController.getCars = async (req, res, next) => {
     page = parseInt(page) || 1;
     const limit = 10;
     let offset = limit * (page - 1);
-    let listCars = await Car.find().skip(offset).limit(limit);
+    let listCars = await Car.find();
+    listCars = listCars.reverse().slice(offset, offset + limit);
     let totalCars = await Car.find().countDocuments();
     let totalPage = Math.ceil(totalCars / limit);
     res.send({
