@@ -48,8 +48,8 @@ carController.getCars = async (req, res, next) => {
     });
     // YOUR CODE HERE
   } catch (err) {
-    // YOUR CODE HERE
     next(err);
+    // YOUR CODE HERE
   }
 };
 
